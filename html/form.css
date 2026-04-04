@@ -1,0 +1,96 @@
+.form{
+    height: 100vh;
+    display: flex;
+    
+}
+.cen11{
+    text-align: center;
+    align-items: center;
+    position: relative;
+    top: 50px;
+    
+
+}
+.cen11{
+    text-align: center;
+    align-items: center;
+    margin-top: 50px;
+    position: relative;
+    top: 20px;
+}
+.part1{
+    width: 50%;
+    align-items: center;
+    text-align: center;
+    
+}
+
+.cen1{
+    margin-top: 15px;
+}
+.boxx{
+    width: 100vh;
+    height: 150px;
+    
+    
+    display: flex;
+ 
+    justify-content: center;
+    align-items: center;
+    
+    
+     
+}
+.boxx2{
+     width: 100vh;
+    height: 80px;
+    
+    
+    display: flex;
+ 
+    justify-content: center;
+    align-items: center;
+   
+}
+.part2{
+    width: 50%;
+     ;
+}
+*{
+    margin: 0%;
+    padding: 0%;
+}
+.box1{
+    
+    height: 50px;
+    width: 300px;
+    
+    border-radius: 50px;
+    text-align: center;
+    background-color: white;
+    border: 1px solid black
+
+}
+.box12{
+     height: 50px;
+    width: 300px;
+    
+    border-radius: 50px;
+    text-align: left;
+    background-color: white;
+    border: 1px solid black
+
+}
+.box13{
+        height: 50px;
+    width: 300px;
+    
+    border-radius: 50px;
+    text-align: center;
+    background-color: orange;
+    border: 1px solid black
+}
+.part2{
+    background-image: url(as.jpg);
+    background-size: cover;
+}
