@@ -9,36 +9,111 @@ function Register() {
     e.preventDefault();
     const data = new FormData();
     Object.keys(formData).forEach(key => data.append(key, formData[key]));
-    data.append('profile_pic', files.profile_pic);
-    data.append('resume', files.resume);
+    if (files.profile_pic) data.append('profile_pic', files.profile_pic);
+    if (files.resume) data.append('resume', files.resume);
 
     try {
       await axios.post('http://127.0.0.1:8000/api/register/', data);
-      alert("Employee Registered!");
-    } catch (err) { alert("Registration Failed!"); }
+      alert("Registration Successful! You can now login.");
+    } catch (err) { 
+      alert("Registration Failed: " + (err.response?.data?.error || "Something went wrong")); 
+    }
   };
 
   return (
-    <div className="flex justify-center p-10 bg-gray-50 min-h-screen">
-      <form onSubmit={handleSubmit} className="bg-white p-8 rounded-3xl shadow-2xl w-[450px] space-y-4">
-        <h2 className="text-2xl font-black text-blue-600 text-center uppercase">Employee Signup</h2>
-        <input type="text" placeholder="Username" className="w-full p-3 border rounded-xl" onChange={e => setFormData({...formData, username: e.target.value})} />
-        <input type="email" placeholder="Email" className="w-full p-3 border rounded-xl" onChange={e => setFormData({...formData, email: e.target.value})} />
-        <input type="text" placeholder="Phone" className="w-full p-3 border rounded-xl" onChange={e => setFormData({...formData, phone: e.target.value})} />
-        <input type="text" placeholder="City" className="w-full p-3 border rounded-xl" onChange={e => setFormData({...formData, city: e.target.value})} />
-        <input type="password" placeholder="Password" className="w-full p-3 border rounded-xl" onChange={e => setFormData({...formData, password: e.target.value})} />
+    <div className="flex justify-center items-center min-h-[90vh] bg-gray-50 px-4 py-12">
+      <div className="bg-white p-8 md:p-10 rounded-xl border border-gray-200 shadow-sm w-full max-w-[500px]">
         
-        <div>
-          <label className="text-xs font-bold text-gray-500 uppercase">Profile Pic</label>
-          <input type="file" onChange={e => setFiles({...files, profile_pic: e.target.files[0]})} className="w-full text-sm mt-1" />
+        <div className="mb-8 text-center">
+          <h2 className="text-2xl font-bold text-gray-900 tracking-tight">Create Account</h2>
+          <p className="text-sm text-gray-500 mt-1 font-medium">Join JobWay to explore opportunities</p>
         </div>
-        <div>
-          <label className="text-xs font-bold text-gray-500 uppercase">Resume (PDF)</label>
-          <input type="file" onChange={e => setFiles({...files, resume: e.target.files[0]})} className="w-full text-sm mt-1" />
-        </div>
-        
-        <button className="w-full bg-blue-600 text-white py-3 rounded-xl font-bold shadow-lg hover:bg-blue-700">Register as Employee</button>
-      </form>
+
+        <form onSubmit={handleSubmit} className="space-y-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="md:col-span-2">
+              <label className="block text-xs font-semibold text-gray-700 uppercase mb-1.5 ml-1">Username</label>
+              <input 
+                type="text" 
+                placeholder="johndoe" 
+                className="w-full px-4 py-2.5 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-sm transition" 
+                onChange={e => setFormData({...formData, username: e.target.value})} 
+                required
+              />
+            </div>
+
+            <div className="md:col-span-2">
+              <label className="block text-xs font-semibold text-gray-700 uppercase mb-1.5 ml-1">Email Address</label>
+              <input 
+                type="email" 
+                placeholder="john@example.com" 
+                className="w-full px-4 py-2.5 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-sm transition" 
+                onChange={e => setFormData({...formData, email: e.target.value})} 
+                required
+              />
+            </div>
+
+            <div>
+              <label className="block text-xs font-semibold text-gray-700 uppercase mb-1.5 ml-1">Phone</label>
+              <input 
+                type="text" 
+                placeholder="+91..." 
+                className="w-full px-4 py-2.5 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-sm transition" 
+                onChange={e => setFormData({...formData, phone: e.target.value})} 
+                required
+              />
+            </div>
+
+            <div>
+              <label className="block text-xs font-semibold text-gray-700 uppercase mb-1.5 ml-1">City</label>
+              <input 
+                type="text" 
+                placeholder="Bhopal" 
+                className="w-full px-4 py-2.5 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-sm transition" 
+                onChange={e => setFormData({...formData, city: e.target.value})} 
+                required
+              />
+            </div>
+
+            <div className="md:col-span-2">
+              <label className="block text-xs font-semibold text-gray-700 uppercase mb-1.5 ml-1">Password</label>
+              <input 
+                type="password" 
+                placeholder="••••••••" 
+                className="w-full px-4 py-2.5 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-sm transition" 
+                onChange={e => setFormData({...formData, password: e.target.value})} 
+                required
+              />
+            </div>
+          </div>
+
+          <hr className="my-6 border-gray-100" />
+
+          <div className="space-y-4">
+            <div>
+              <label className="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Profile Picture</label>
+              <input 
+                type="file" 
+                onChange={e => setFiles({...files, profile_pic: e.target.files[0]})} 
+                className="block w-full text-xs text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:text-xs file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100" 
+              />
+            </div>
+
+            <div>
+              <label className="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Resume (PDF Only)</label>
+              <input 
+                type="file" 
+                onChange={e => setFiles({...files, resume: e.target.files[0]})} 
+                className="block w-full text-xs text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:text-xs file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100" 
+              />
+            </div>
+          </div>
+
+          <button className="w-full mt-6 bg-gray-900 text-white py-3 rounded font-bold text-sm uppercase tracking-wide hover:bg-gray-800 transition shadow-sm">
+            Create Employee Account
+          </button>
+        </form>
+      </div>
     </div>
   );
 }
