@@ -96,3 +96,12 @@ SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60), # Ab token 1 ghante chalega
     'AUTH_HEADER_TYPES': ('Bearer',), # SIGNING_KEY hata di toh default use hogi
 }
+
+
+
+from corsheaders.defaults import default_headers
+
+CORS_ALLOW_HEADERS = list(default_headers) + [
+    'authorization',
+    'x-secret-hash',
+]

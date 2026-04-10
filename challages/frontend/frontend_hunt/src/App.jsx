@@ -7,7 +7,8 @@ function App() {
 
   // BUG 1: Port is 8001 (Django runs on 8000). 
   // Team has to find this and change it to 8000.
-  const API_URL = "http://127.0.0.1:8000/api"
+  // const API_URL = "http://127.0.0.1:8000/api"
+  const API_URL = "/api"
 
   const login = async () => {
     setMessage("Attempting Login...");
