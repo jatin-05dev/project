@@ -1,0 +1,57 @@
+ {% extends "base.html" %}
+
+{%load static%}
+
+
+{% block title %}
+
+<title>sign</title>
+                                                                                                 
+{% endblock title %}
+
+{% block css %}
+<link rel="stylesheet" href="{%static 'css/sign.css'%}">
+  
+{% endblock css %}
+
+
+    
+
+
+{% block content %}
+ 
+   <section id="mm">
+    <div id="main">
+      <h1>Sign Up</h1>
+      <form id="sig">
+        <label for="name">Name</label>
+        <input required type="text" id="name" placeholder="Enter your name">
+
+        <label for="phone">Phone</label>
+        <input required type="number" id="phone" placeholder="Enter phone number">
+
+        <label for="email">Email</label>
+        <input required type="email" id="email" placeholder="Enter email">
+
+        <label for="adress">Address</label>
+        <input required type="text" id="adress" placeholder="Enter address">
+
+        <label for="city">City</label>
+        <input required type="text" id="city" placeholder="Enter city">
+
+        <label for="password">Password</label>
+        <input required type="text" id="password" placeholder="Enter password">
+
+        <label for="username">Username</label>
+        <input required type="text" id="username" placeholder="Enter username">
+
+        <input type="submit" value="Sign Up">
+        <br><br>
+     
+        
+      </form>
+        
+    </div>
+  </section>
+
+{% endblock content %}

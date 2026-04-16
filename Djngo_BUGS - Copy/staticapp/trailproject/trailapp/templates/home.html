@@ -1,0 +1,197 @@
+ {% extends "base.html" %}
+{%load static%}
+<link rel="stylesheet" href="{%static 'css/home.css'%}">
+ {% block title %}
+ <title>home</title>
+ {% endblock title %}
+
+    
+
+{% block content %}
+ 
+  <!-- GRID -->
+  <div class="grid">
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" alt="Scuba Diving">
+      <div class="info">
+        <h3>Scuba Diving</h3>
+        <p>Starting from <span>₹3000</span></p>
+      </div>
+      <button onclick="bookAdventure('Scuba Diving','https://images.unsplash.com/photo-1507525428034-b723cf961d3e','3000')">Book Now</button>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1519821172141-b5d8f7a5202d" alt="Mountain Trekking">
+      <div class="info">
+        <h3>Mountain Trekking</h3>
+        <p>Starting from <span>₹1800</span></p>
+      </div>
+      <button onclick="bookAdventure('Mountain Trekking','https://images.unsplash.com/photo-1519821172141-b5d8f7a5202d','1800')">Book Now</button>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470" alt="Desert Safari">
+      <div class="info">
+        <h3>Desert Safari</h3>
+        <p>Starting from <span>₹2200</span></p>
+      </div>
+      <button onclick="bookAdventure('Desert Safari','https://images.unsplash.com/photo-1501785888041-af3ef285b470','2200')">Book Now</button>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" alt="Camping">
+      <div class="info">
+        <h3>Camping</h3>
+        <p>Starting from <span>₹1200</span></p>
+      </div>
+      <button onclick="bookAdventure('Camping','https://images.unsplash.com/photo-1500530855697-b586d89ba3ee','1200')">Book Now</button>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1470246973918-29a93221c455" alt="River Rafting">
+      <div class="info">
+        <h3>River Rafting</h3>
+        <p>Starting from <span>₹2000</span></p>
+      </div>
+      <button onclick="bookAdventure('River Rafting','https://images.unsplash.com/photo-1470246973918-29a93221c455','2000')">Book Now</button>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5" alt="Bungee Jumping">
+      <div class="info">
+        <h3>Bungee Jumping</h3>
+        <p>Starting from <span>₹4000</span></p>
+      </div>
+      <button onclick="bookAdventure('Bungee Jumping','https://images.unsplash.com/photo-1499951360447-b19be8fe80f5','4000')">Book Now</button>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1517673132405-a56a62b18caf" alt="Hot Air Balloon">
+      <div class="info">
+        <h3>Hot Air Balloon</h3>
+        <p>Starting from <span>₹3500</span></p>
+      </div>
+      <button onclick="bookAdventure('Hot Air Balloon','https://images.unsplash.com/photo-1517673132405-a56a62b18caf','3500')">Book Now</button>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1512295767273-ac109ac3acfa" alt="Sky Diving">
+      <div class="info">
+        <h3>Sky Diving</h3>
+        <p>Starting from <span>₹4500</span></p>
+      </div>
+      <button onclick="bookAdventure('Sky Diving','https://images.unsplash.com/photo-1512295767273-ac109ac3acfa','4500')">Book Now</button>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1519817650390-64a93db511aa" alt="Jungle Safari">
+      <div class="info">
+        <h3>Jungle Safari</h3>
+        <p>Starting from <span>₹2800</span></p>
+      </div>
+      <button onclick="bookAdventure('Jungle Safari','https://images.unsplash.com/photo-1519817650390-64a93db511aa','2800')">Book Now</button>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9" alt="Snow Skiing">
+      <div class="info">
+        <h3>Snow Skiing</h3>
+        <p>Starting from <span>₹5000</span></p>
+      </div>
+      <button onclick="bookAdventure('Snow Skiing','https://images.unsplash.com/photo-1523906834658-6e24ef2386f9','5000')">Book Now</button>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1476611338391-6f395a0ebc47" alt="Surfing">
+      <div class="info">
+        <h3>Surfing</h3>
+        <p>Starting from <span>₹2700</span></p>
+      </div>
+      <button onclick="bookAdventure('Surfing','https://images.unsplash.com/photo-1476611338391-6f395a0ebc47','2700')">Book Now</button>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1526662092594-e98c1e356d6a" alt="Rock Climbing">
+      <div class="info">
+        <h3>Rock Climbing</h3>
+        <p>Starting from <span>₹2400</span></p>
+      </div>
+      <button onclick="bookAdventure('Rock Climbing','https://images.unsplash.com/photo-1526662092594-e98c1e356d6a','2400')">Book Now</button>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e" alt="Cave Exploration">
+      <div class="info">
+        <h3>Cave Exploration</h3>
+        <p>Starting from <span>₹1800</span></p>
+      </div>
+      <button onclick="bookAdventure('Cave Exploration','https://images.unsplash.com/photo-1470770841072-f978cf4d019e','1800')">Book Now</button>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" alt="Deep Sea Diving">
+      <div class="info">
+        <h3>Deep Sea Diving</h3>
+        <p>Starting from <span>₹3200</span></p>
+      </div>
+      <button onclick="bookAdventure('Deep Sea Diving','https://images.unsplash.com/photo-1507525428034-b723cf961d3e','3200')">Book Now</button>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" alt="Paragliding">
+      <div class="info">
+        <h3>Paragliding</h3>
+        <p>Starting from <span>₹2500</span></p>
+      </div>
+      <button onclick="bookAdventure('Paragliding','https://images.unsplash.com/photo-1507525428034-b723cf961d3e','2500')">Book Now</button>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05" alt="Hiking">
+      <div class="info">
+        <h3>Hiking</h3>
+        <p>Starting from <span>₹1500</span></p>
+      </div>
+      <button onclick="bookAdventure('Hiking','https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05','1500')">Book Now</button>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1477414348463-c0eb7f1359b6" alt="Waterfall Trek">
+      <div class="info">
+        <h3>Waterfall Trek</h3>
+        <p>Starting from <span>₹1700</span></p>
+      </div>
+      <button onclick="bookAdventure('Waterfall Trek','https://images.unsplash.com/photo-1477414348463-c0eb7f1359b6','1700')">Book Now</button>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" alt="Kayaking">
+      <div class="info">
+        <h3>Kayaking</h3>
+        <p>Starting from <span>₹2600</span></p>
+      </div>
+      <button onclick="bookAdventure('Kayaking','https://images.unsplash.com/photo-1507525428034-b723cf961d3e','2600')">Book Now</button>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9" alt="Snowboarding">
+      <div class="info">
+        <h3>Snowboarding</h3>
+        <p>Starting from <span>₹4200</span></p>
+      </div>
+      <button onclick="bookAdventure('Snowboarding','https://images.unsplash.com/photo-1523906834658-6e24ef2386f9','4200')">Book Now</button>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1516569422535-dc8e1c0b0b52" alt="Zip Lining">
+      <div class="info">
+        <h3>Zip Lining</h3>
+        <p>Starting from <span>₹1900</span></p>
+      </div>
+      <button onclick="bookAdventure('Zip Lining','https://images.unsplash.com/photo-1516569422535-dc8e1c0b0b52','1900')">Book Now</button>
+    </div>
+
+  </div>
+ 
+{% endblock content %}

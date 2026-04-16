@@ -1,0 +1,192 @@
+ /* Basic reset */
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif; }
+body { background:#fff; color:#222; min-height:100vh; display:flex; flex-direction:column; }
+
+/* Header */
+header {
+  background:#c62828;
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:14px 36px;
+  position:sticky;
+  top:0;
+  z-index:100;
+  box-shadow:0 3px 12px rgba(0,0,0,0.12);
+}
+.logo { font-size:20px; font-weight:700; }
+nav ul { list-style:none; display:flex; gap:22px; align-items:center; }
+nav a { color:#fff; text-decoration:none; font-weight:500; transition:0.2s; }
+nav a:hover { color:#ffdddd; }
+#l { background:#000; color:#fff; border:none; padding:8px 14px; border-radius:8px; cursor:pointer; font-weight:600; transition:0.2s; }
+#l:hover { background:#1b1b1b; }
+
+/* Title */
+h1 { text-align:center; color:#c62828; margin:28px 0; font-size:1.8rem; }
+
+/* Grid */
+.grid {
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap:22px;
+  width:92%;
+  max-width:1200px;
+  margin: 0 auto 36px;
+}
+
+/* Card */
+.card {
+  background:#fff;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 6px 18px rgba(0,0,0,0.08);
+  display:flex;
+  flex-direction:column;
+  transition:transform .22s ease, box-shadow .22s ease;
+}
+.card:hover { transform:translateY(-6px); box-shadow:0 12px 30px rgba(0,0,0,0.12); }
+.card img { width:100%; height:160px; object-fit:cover; display:block; }
+.info { padding:12px 14px; text-align:center; flex:1; }
+.info h3 { color:#c62828; margin-bottom:8px; font-size:1.05rem; }
+.info p { color:#444; font-size:0.95rem; margin-bottom:8px; }
+.info span { color:#111; font-weight:700; }
+
+/* Button */
+.card > button {
+  border:none;
+  background:#c62828;
+  color:#fff;
+  padding:12px;
+  font-weight:700;
+  cursor:pointer;
+  width:100%;
+  transition:background .18s ease;
+  border-top:1px solid rgba(0,0,0,0.04);
+}
+.card > button:hover { background:#8f1b1b; }
+
+/* Footer */
+footer {
+  background:#111;
+  color:#fff;
+  display:flex;
+  gap:30px;
+  justify-content:space-around;
+  flex-wrap:wrap;
+  padding:34px 22px;
+}
+footer div { max-width:320px; }
+footer h3 { color:#c62828; margin-bottom:8px; font-size:1.05rem; }
+footer p, footer ul li { color:#e9e3e3; font-size:0.95rem; line-height:1.6; }
+footer ul { list-style:none; padding:0; }
+#copy { background:#000; color:#fff; text-align:center; padding:10px; font-size:0.9rem; }
+
+/* Responsive */
+@media (max-width:720px) {
+  nav ul { display:none; } /* keep header clean on small screens */
+  header { padding:12px 18px; }
+  .grid { gap:16px; width:94%; }
+  h1 { font-size:1.4rem; margin:20px 0; }
+}
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+body{
+	line-height: 1.5;
+	font-family: 'Poppins', sans-serif;
+
+}
+*{
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+}
+.container{
+	max-width: 1170px;
+	margin:auto;
+}
+.row{
+	display: flex;
+	flex-wrap: wrap;
+}
+ul{
+	list-style: none;
+}
+.footer{
+	background-color: #24262b;
+    padding: 70px 0;
+    margin-top: 300px;
+}
+.footer-col{
+   width: 25%;
+   padding: 0 15px;
+}
+.footer-col h4{
+	font-size: 18px;
+	color: #ffffff;
+	text-transform: capitalize;
+	margin-bottom: 35px;
+	font-weight: 500;
+	position: relative;
+}
+.footer-col h4::before{
+	content: '';
+	position: absolute;
+	left:0;
+	bottom: -10px;
+	background-color: #e91e63;
+	height: 2px;
+	box-sizing: border-box;
+	width: 50px;
+}
+.footer-col ul li:not(:last-child){
+	margin-bottom: 10px;
+}
+.footer-col ul li a{
+	font-size: 16px;
+	text-transform: capitalize;
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: 300;
+	color: #bbbbbb;
+	display: block;
+	transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+	color: #ffffff;
+	padding-left: 8px;
+}
+.footer-col .social-links a{
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: rgba(255,255,255,0.2);
+	margin:0 10px 10px 0;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	color: #ffffff;
+	transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover{
+	color: #24262b;
+	background-color: #ffffff;
+}
+
+/*responsive*/
+@media(max-width: 767px){
+  .footer-col{
+    width: 50%;
+    margin-bottom: 30px;
+}
+}
+@media(max-width: 574px){
+  .footer-col{
+    width: 100%;
+}
+}
+
+
+
